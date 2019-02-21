@@ -993,6 +993,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -8052,7 +8056,9 @@ var render = function() {
                   }
                 },
                 [_vm._v("Fit Image")]
-              )
+              ),
+              _vm._v(" "),
+              _vm._m(1)
             ]
           )
         ]),
@@ -8314,6 +8320,22 @@ var staticRenderFns = [
       },
       [_c("i", { staticClass: "fas fa-folder-open" }), _vm._v(" Trace Image")]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { margin: "1em 0" } }, [
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "http://www.dankuck.com/2019/02/22/mystery-picture-graph.html"
+          }
+        },
+        [_vm._v("What do I do?")]
+      )
+    ])
   }
 ]
 render._withStripped = true

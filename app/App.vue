@@ -18,6 +18,10 @@
                     <button @click="createNewLine" :disabled="!mode.canCreateNewLines" class="btn btn-primary btn-lg btn-block">Start New Line</button>
 
                     <button @click.stop="startFitImage" :disabled="!imageSource" class="btn btn-primary btn-lg btn-block">Fit Image</button>
+
+                    <div style="margin: 1em 0;">
+                        <a href="http://www.dankuck.com/2019/02/22/mystery-picture-graph.html">What do I do?</a>
+                    </div>
                 </div>
             </div>
 

@@ -168,6 +168,7 @@ export default {
             loadingImage: false,
             parseError: null,
             zoom: 1,
+            movedRecentlyToken: null,
         };
     },
     mounted() {
@@ -304,9 +305,22 @@ export default {
             this.pointer = this.unzoomPoint([event.offsetX, event.offsetY]);
             this.pointerHidden = false;
             this.mode.movePointer && this.mode.movePointer(event);
+            this.movedRecentlyToken = Math.random();
         },
         hidePointer() {
-            this.pointerHidden = true;
+            /**
+             * Due to some weird browser effects, we get a lot of hidePointer
+             * calls even when the mouse does not exit the graph element. To
+             * solve this, the movePointer code above sets a random token. If
+             * it doesn't change within a timelimit, we can tell that the
+             * mouse really exited.
+             */
+            const movedRecentlyToken = this.movedRecentlyToken;
+            setTimeout(() => {
+                if (movedRecentlyToken == this.movedRecentlyToken) {
+                    this.pointerHidden = true;
+                }
+            }, 100);
         },
         openFile(event) {
             // give things a chance to clean up before reading in the files
